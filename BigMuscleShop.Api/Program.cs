@@ -1,3 +1,4 @@
+using BigMuscleShop.Application;
 using BigMuscleShop.Infractructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureInfractructureServices(builder.Configuration);
+builder.Services.ConfigureApplicationServices(builder.Configuration);
 
 builder.Services.AddCors(options =>
 {
