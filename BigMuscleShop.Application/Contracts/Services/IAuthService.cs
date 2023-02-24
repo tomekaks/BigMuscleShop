@@ -10,7 +10,6 @@ namespace BigMuscleShop.Application.Contracts.Services
     public interface IAuthService
     {
         Task Register(RegisterDto registerDto);
-        Task<AuthResponse> Login(LoginDto loginDto);
-        Task Logout();
+        Task<AuthResponseDto> Login(LoginDto loginDto);
     }
 }

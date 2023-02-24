@@ -2,6 +2,7 @@
 using BigMuscleShop.Application.Contracts.Services;
 using BigMuscleShop.Application.Dtos;
 using BigMuscleShop.Application.Dtos.UserDtos;
+using BigMuscleShop.Application.Exeptions;
 using BigMuscleShop.Core.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
@@ -19,31 +20,33 @@ namespace BigMuscleShop.Application.Services
     public class AuthService : IAuthService
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IMapper _mapper;
         private readonly JwtSettings _jwtSettings;
 
         public AuthService(UserManager<ApplicationUser> userManager, IMapper mapper,
-                           SignInManager<ApplicationUser> signInManager, IOptions<JwtSettings> jwtSettings)
+                           IOptions<JwtSettings> jwtSettings)
         {
             _userManager = userManager;
             _mapper = mapper;
-            _signInManager = signInManager;
             _jwtSettings = jwtSettings.Value;
         }
-        public async Task<AuthResponse> Login(LoginDto loginDto)
+        public async Task<AuthResponseDto> Login(LoginDto loginDto)
         {
             var user = await _userManager.FindByNameAsync(loginDto.UserName);
             if (user == null)
             {
-                return null;
+                throw new NotFoundExeption(loginDto.UserName, loginDto.UserName);
             }
 
-            await _signInManager.PasswordSignInAsync(loginDto.UserName, loginDto.Password, isPersistent: false, lockoutOnFailure: false);
+            bool isPasswordValid = await _userManager.CheckPasswordAsync(user, loginDto.Password);
+            if (!isPasswordValid)
+            {
+                throw new BadRequestExeption("Invalid credentials.");
+            }
 
             JwtSecurityToken jwtSecurityToken = await GenerateToken(user);
 
-            var response = new AuthResponse()
+            var response = new AuthResponseDto()
             {
                 Id = user.Id,
                 Email = user.Email,
@@ -52,11 +55,6 @@ namespace BigMuscleShop.Application.Services
             };
 
             return response;
-        }
-
-        public async Task Logout()
-        {
-            await _signInManager.SignOutAsync();
         }
 
         public async Task Register(RegisterDto registerDto)

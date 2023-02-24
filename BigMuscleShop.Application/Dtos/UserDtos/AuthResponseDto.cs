@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BigMuscleShop.Application.Dtos.UserDtos
 {
-    public class AuthResponse
+    public class AuthResponseDto
     {
         public string Id { get; set; }
         public string UserName { get; set; }

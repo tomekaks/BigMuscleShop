@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BigMuscleShop.Application\BigMuscleShop.Application.csproj" />
     <ProjectReference Include="..\BigMuscleShop.Infractructure\BigMuscleShop.Infractructure.csproj" />
   </ItemGroup>
