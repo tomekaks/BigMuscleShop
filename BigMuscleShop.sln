@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigMuscleShop.Api", "BigMuscleShop.Api\BigMuscleShop.Api.csproj", "{97CFEB9E-EDDC-49EF-8E42-A4DEA3C237CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigMuscleShop.Api", "BigMuscleShop.Api\BigMuscleShop.Api.csproj", "{97CFEB9E-EDDC-49EF-8E42-A4DEA3C237CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigMuscleShop.Core", "BigMuscleShop.Core\BigMuscleShop.Core.csproj", "{2B47EABC-D9CC-43B0-B08E-EB9F492144E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigMuscleShop.Core", "BigMuscleShop.Core\BigMuscleShop.Core.csproj", "{2B47EABC-D9CC-43B0-B08E-EB9F492144E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigMuscleShop.Application", "BigMuscleShop.Application\BigMuscleShop.Application.csproj", "{6C429D3A-B3B7-4522-835B-61738E0A9FB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigMuscleShop.Application", "BigMuscleShop.Application\BigMuscleShop.Application.csproj", "{6C429D3A-B3B7-4522-835B-61738E0A9FB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigMuscleShop.Infractructure", "BigMuscleShop.Infractructure\BigMuscleShop.Infractructure.csproj", "{F06927D8-D669-41DC-91A1-15ACF8AFF900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigMuscleShop.Infractructure", "BigMuscleShop.Infractructure\BigMuscleShop.Infractructure.csproj", "{F06927D8-D669-41DC-91A1-15ACF8AFF900}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigMuscleShop", "BigMuscleShop\BigMuscleShop.csproj", "{3CDFDE27-E3F5-4780-A177-817684BA1EF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F06927D8-D669-41DC-91A1-15ACF8AFF900}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F06927D8-D669-41DC-91A1-15ACF8AFF900}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F06927D8-D669-41DC-91A1-15ACF8AFF900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CDFDE27-E3F5-4780-A177-817684BA1EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CDFDE27-E3F5-4780-A177-817684BA1EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CDFDE27-E3F5-4780-A177-817684BA1EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CDFDE27-E3F5-4780-A177-817684BA1EF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
