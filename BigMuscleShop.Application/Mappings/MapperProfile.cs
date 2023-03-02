@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using BigMuscleShop.Application.Dtos.UserDtos;
+using BigMuscleShop.Application.Dtos.Product;
+using BigMuscleShop.Application.Dtos.User;
 using BigMuscleShop.Core.Data;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace BigMuscleShop.Application.Mappings
         public MapperProfile()
         {
             CreateMap<ApplicationUser, RegisterDto>();
+
+            CreateMap<Product, ProductDto>().ReverseMap();
         }
     }
 }

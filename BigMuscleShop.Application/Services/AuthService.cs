@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using BigMuscleShop.Application.Contracts.Services;
 using BigMuscleShop.Application.Dtos;
-using BigMuscleShop.Application.Dtos.UserDtos;
+using BigMuscleShop.Application.Dtos.User;
 using BigMuscleShop.Application.Exeptions;
 using BigMuscleShop.Core.Data;
 using Microsoft.AspNetCore.Identity;

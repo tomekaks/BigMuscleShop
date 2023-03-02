@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BigMuscleShop.Application.Dtos.UserDtos
+namespace BigMuscleShop.Application.Dtos.User
 {
     public class AuthResponseDto
     {

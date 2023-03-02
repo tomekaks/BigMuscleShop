@@ -1,5 +1,5 @@
 ﻿using BigMuscleShop.Application.Contracts.Services;
-using BigMuscleShop.Application.Dtos.UserDtos;
+using BigMuscleShop.Application.Dtos.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

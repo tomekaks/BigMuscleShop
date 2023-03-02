@@ -21,6 +21,8 @@ namespace BigMuscleShop.Application
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
 
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IProductsService, ProductsService>();
+
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddAuthentication(options =>
