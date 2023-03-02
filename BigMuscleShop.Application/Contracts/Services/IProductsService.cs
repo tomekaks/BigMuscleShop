@@ -12,7 +12,7 @@ namespace BigMuscleShop.Application.Contracts.Services
         Task AddProduct(ProductDto productDto);
         Task DeleteProduct(int id);
         Task<ProductDto> GetProduct(int id);
-        Task<ProductDto> UpdateProduct(ProductDto productDto);
+        Task UpdateProduct(UpdateProductDto productDto);
         Task<List<ProductDto>> GetAllProducts();
     }
 }

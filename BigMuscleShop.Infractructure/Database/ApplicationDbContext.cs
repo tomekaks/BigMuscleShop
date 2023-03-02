@@ -1,4 +1,5 @@
-﻿using BigMuscleShop.Core.Data;
+﻿using BigMuscleShop.Application.Contracts;
+using BigMuscleShop.Core.Data;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BigMuscleShop.Infractructure.Database
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -17,6 +18,11 @@ namespace BigMuscleShop.Infractructure.Database
         }
 
         public DbSet<Product> Products { get; set; }
+
+        public Task SaveChangesAsync()
+        {
+            return base.SaveChangesAsync();
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

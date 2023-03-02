@@ -1,4 +1,5 @@
-﻿using BigMuscleShop.Core.Data;
+﻿using BigMuscleShop.Application.Contracts;
+using BigMuscleShop.Core.Data;
 using BigMuscleShop.Infractructure.Database;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +28,7 @@ namespace BigMuscleShop.Infractructure
             })
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddTransient<IApplicationDbContext, ApplicationDbContext>();
 
             return services;
         }

@@ -17,6 +17,7 @@ namespace BigMuscleShop.Application.Mappings
             CreateMap<ApplicationUser, RegisterDto>();
 
             CreateMap<Product, ProductDto>().ReverseMap();
+            CreateMap<UpdateProductDto, Product>();
         }
     }
 }
